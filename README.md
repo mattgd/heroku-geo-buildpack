@@ -1,10 +1,9 @@
 Heroku buildpack: geo
 =====================
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) that
-vendors main geo/gis libraries like geos, proj and gdal.
+This is a [Heroku buildpack](https://devcenter.heroku.com/articles/buildpacks) that includes Geo/GIS libraries including GEOS, PROJ and GDAL.
 
-You will use this buildpack with other major buildpack such as Ruby buildpack.
+This buildpack is intended to be used with other major buildpacks such as the Python buildpack.
 
 Usage
 -----
@@ -12,8 +11,8 @@ Usage
 Example usage:
 
 ```
-$ heroku buildpacks:set https://github.com/dschep/heroku-geo-buildpack.git
-$ heroku buildpacks:add heroku/ruby
+$ heroku buildpacks:set https://github.com/mattgd/heroku-geo-buildpack.git
+$ heroku buildpacks:add heroku/python
 ```
 
 Run `heroku buildpacks` to make sure that `heroku-geo-buildpack` is added before
@@ -22,8 +21,8 @@ the language buildpacks.
 ```
 $ heroku buildpacks
 === sushi Buildpack URLs
-1. https://github.com/dschep/heroku-geo-buildpack.git
-2. heroku/ruby
+1. https://github.com/mattgd/heroku-geo-buildpack.git
+2. heroku/python
 ```
 
 Testing
@@ -46,6 +45,3 @@ For rgeo:
 >>> RGeo::Geos.supported?
 => true
 ```
-
-Forked from [cyberdelia/heroku-geo-buildpack](https://github.com/cyberdelia/heroku-geo-buildpack) to
-fix libjasper & make env vars more specific
